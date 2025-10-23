@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { background:#0d0d0d; color:#f0f0f0; font-family: 'Inter', sans-serif; }
+.site-header, .site-footer { background:#050507; color:#f0b90b; }
+.container { max-width:1100px; margin:auto; padding:20px; }
+.cart-table { width:100%; border-collapse:collapse; margin-top:20px; }
+.cart-table th, .cart-table td { padding:12px 10px; text-align:center; border-bottom:1px solid #222; }
+.cart-table img { width:80px; border-radius:8px; }
+.btn { padding:8px 16px; border:none; border-radius:6px; cursor:pointer; }
+.btn-primary { background:#f0b90b; color:#050507; font-weight:700; transition:0.3s; }
+.btn-primary:hover { background:#e5a800; }
+.qty-btn { background:#222; color:#f0b90b; font-weight:700; border-radius:6px; padding:4px 10px; cursor:pointer; }
+.qty-input { width:40px; text-align:center; border-radius:6px; border:none; background:#111; color:#f0f0f0; }
+.total { text-align:right; font-size:1.3rem; margin-top:20px; }
+.remove-btn { background:#ff3b3b; color:#fff; padding:4px 8px; border-radius:6px; cursor:pointer; transition:0.3s; }
+.remove-btn:hover { background:#e60000; }
+.empty-cart { text-align:center; margin-top:50px; font-size:1.5rem; color:#aaa; }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<h1 style="text-align:center; margin-top:20px;">Your Cart</h1>
+<div id="cart-container">
+<table class="cart-table" id="cart-table">
+<thead>
+<tr>
+<th>Image</th>
+<th>Dish</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Subtotal</th>
+<th>Remove</th>
+</tr>
+</thead>
+<tbody id="cart-items">
+<!-- Cart items added dynamically -->
+</tbody>
+</table>
+<div class="total">
+<strong>Total: ₹<span id="cart-total">0</span></strong>
+</div>
+<div style="text-align:right; margin-top:20px;">
+<button class="btn btn-primary" onclick="checkout()">Proceed to Checkout</button>
+</div>
+<div id="empty-msg" class="empty-cart">Your cart is empty!</div>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotalEl = document.getElementById('cart-total');
+const emptyMsg = document.getElementById('empty-msg');
+
+function renderCart() {
+    cartItemsContainer.innerHTML = '';
+    if(cart.length === 0){
+        emptyMsg.style.display = 'block';
+        document.getElementById('cart-table').style.display = 'none';
+        cartTotalEl.textContent = '0';
+        return;
+    } else {
+        emptyMsg.style.display = 'none';
+        document.getElementById('cart-table').style.display = 'table';
+    }
+
+    let total = 0;
+    cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+        <td><img src="${item.img}" alt="${item.title}"></td>
+        <td>${item.title}</td>
+        <td>₹${item.price}</td>
+        <td>
+            <button class="qty-btn" onclick="updateQty(${index}, -1)">−</button>
+            <input class="qty-input" value="${item.quantity}" readonly>
+            <button class="qty-btn" onclick="updateQty(${index}, 1)">+</button>
+        </td>
+        <td>₹${subtotal}</td>
+        <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
+        `;
+        cartItemsContainer.appendChild(tr);
+    });
+    cartTotalEl.textContent = total;
+    document.getElementById('mini-cart-count').textContent = cart.length;
+}
+
+function updateQty(index, change){
+    cart[index].quantity += change;
+    if(cart[index].quantity <= 0) cart[index].quantity = 1;
+    saveCart();
+    renderCart();
+}
+
+function removeItem(index){
+    cart.splice(index,1);
+    saveCart();
+    renderCart();
+}
+
+function saveCart(){
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function checkout(){
+    if(cart.length === 0){
+        alert('Cart is empty!');
+        return;
+    }
+    window.location.href = 'checkout.html';
+}
+
+// Initial render
+renderCart();
+</script>
+</body>
+</html>

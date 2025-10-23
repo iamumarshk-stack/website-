@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>French Fries — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<section class="hero" style="background-image:url('assets/images/french-fries.jpg')">
+<div class="hero-content">
+<h1>French Fries</h1>
+<p class="muted">Crispy golden fries with truffle oil and parmesan.</p>
+</div>
+</section>
+
+<main class="container" style="margin-top:26px">
+<div class="dish-hero-panel">
+<div class="dish-gallery card">
+<img src="fries hero.avif" alt="French Fries">
+</div>
+<div class="dish-info card">
+<h2>French Fries</h2>
+<p class="muted">Hand-cut golden fries tossed with truffle oil, freshly grated parmesan, and a sprinkle of herbs.</p>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+<div>
+<div class="price">₹199</div>
+<div class="muted">Snack • Vegetarian</div>
+</div>
+<div style="text-align:right">
+<label style="display:block;margin-bottom:8px">Quantity</label>
+<div style="display:flex;gap:8px;align-items:center">
+<button class="qty-btn" data-op="dec">−</button>
+<input class="qty-input" value="1">
+<button class="qty-btn" data-op="inc">+</button>
+</div>
+<div style="margin-top:14px">
+<button class="btn btn-primary add-to-cart" data-sku="french-fries" data-price="199" data-title="French Fries" data-img="assets/images/french-fries.jpg">Add to Cart</button>
+</div>
+</div>
+</div>
+<div style="margin-top:18px">
+<h4>Chef's Notes</h4>
+<p class="muted">Crispy outside, fluffy inside. Add ketchup or mayo on the side.</p>
+</div>
+</div>
+</div>
+
+<section style="margin-top:18px" class="card">
+<h4>Recommended Pairings</h4>
+<div class="pair-grid">
+<a class="pair-card" href="classic-burger.html"><img src="assets/images/classic-burger.jpg" alt=""><div class="muted">Classic Burger</div></a>
+<a class="pair-card" href="chicken-tacos.html"><img src="assets/images/chicken-tacos.jpg" alt=""><div class="muted">Chicken Tacos</div></a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

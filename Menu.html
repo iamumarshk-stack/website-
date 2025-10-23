@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DelishBite — Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">DelishBite</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="background-image:url('assets/images/hero-menu.jpg')">
+    <div class="hero-content">
+      <h1 class="fade-up">Curated Menu</h1>
+      <div class="accent-underline fade-up" style="animation-delay:.1s"></div>
+      <p class="muted fade-up" style="animation-delay:.15s">Tap any dish to view details, add to cart, or customize.</p>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top:26px">
+    <section class="menu-grid">
+      <!-- classic-burger -->
+      <a class="dish-card card fade-up pop" href="classic-burger.html">
+        <div class="media"><img src="burger.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Classic Burger</h4><p class="dish-desc muted">Grass-fed angus, brioche, cheese.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹349</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- cheese-pizza -->
+      <a class="dish-card card fade-up pop" href="cheese-pizza.html">
+        <div class="media"><img src="pizza.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Classic Cheese Pizza</h4><p class="dish-desc muted">Stone-baked, San Marzano, fior di latte.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹499</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- italian-pasta -->
+      <a class="dish-card card fade-up pop" href="italian-pasta.html">
+        <div class="media"><img src="pasta.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Italian Pasta</h4><p class="dish-desc muted">Handmade tagliatelle, ragu, pecorino.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹420</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- chicken-tacos -->
+      <a class="dish-card card fade-up pop" href="chicken-tacos.html">
+        <div class="media"><img src="taco.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Chicken Tacos</h4><p class="dish-desc muted">Charred chicken, pico, crema.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹299</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- chocolate-cake -->
+      <a class="dish-card card fade-up pop" href="chocolate-cake.html">
+        <div class="media"><img src="cake.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Chocolate Cake</h4><p class="dish-desc muted">Decadent layers with ganache.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹240</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- french-fries -->
+      <a class="dish-card card fade-up pop" href="french-fries.html">
+        <div class="media"><img src="fries.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Truffle Fries</h4><p class="dish-desc muted">Hand-cut fries with truffle oil.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹199</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- grilled-sandwich -->
+      <a class="dish-card card fade-up pop" href="grilled-sandwich.html">
+        <div class="media"><img src="sandwhich.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Grilled Sandwich</h4><p class="dish-desc muted">Sourdough, roasted veg, cheese.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹220</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- ice-cream-sundae -->
+      <a class="dish-card card fade-up pop" href="ice-cream-sundae.html">
+        <div class="media"><img src="icecream.avif" alt=""></div>
+        <div class="info"><h4 class="dish-title">Ice Cream Sundae</h4><p class="dish-desc muted">Vanilla, caramel, almonds.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹180</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+      <!-- veggie-salad -->
+      <a class="dish-card card fade-up pop" href="veggie-salad.html">
+        <div class="media"><img src="salad.avif "alt=></div>
+        <div class="info"><h4 class="dish-title">Veggie Salad</h4><p class="dish-desc muted">Heirloom greens, citrus vinaigrette.</p><div style="display:flex;justify-content:space-between;align-items:center"><div class="price">₹260</div><div class="btn btn-sm btn-ghost">View</div></div></div>
+      </a>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 DelishBite</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

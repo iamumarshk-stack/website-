@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicken Tacos — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<section class="hero" style="background-image:url('assets/images/chicken-tacos.jpg')">
+<div class="hero-content">
+<h1>Chicken Tacos</h1>
+<p class="muted">Spiced grilled chicken with fresh toppings.</p>
+</div>
+</section>
+
+<main class="container" style="margin-top:26px">
+<div class="dish-hero-panel">
+<div class="dish-gallery card">
+<img src="taco hero.avif" alt="Chicken Tacos">
+</div>
+<div class="dish-info card">
+<h2>Chicken Tacos</h2>
+<p class="muted">Soft tortillas filled with marinated grilled chicken, pico de gallo, avocado, and zesty lime crema.</p>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+<div>
+<div class="price">₹299</div>
+<div class="muted">Spicy • Chef's special</div>
+</div>
+<div style="text-align:right">
+<label style="display:block;margin-bottom:8px">Quantity</label>
+<div style="display:flex;gap:8px;align-items:center">
+<button class="qty-btn" data-op="dec">−</button>
+<input class="qty-input" value="1">
+<button class="qty-btn" data-op="inc">+</button>
+</div>
+<div style="margin-top:14px">
+<button class="btn btn-primary add-to-cart" data-sku="chicken-tacos" data-price="299" data-title="Chicken Tacos" data-img="assets/images/chicken-tacos.jpg">Add to Cart</button>
+</div>
+</div>
+</div>
+<div style="margin-top:18px">
+<h4>Chef's Notes</h4>
+<p class="muted">Marinated for 12 hours and flame-grilled. Serve with lime wedges for best flavor.</p>
+</div>
+</div>
+</div>
+
+<section style="margin-top:18px" class="card">
+<h4>Recommended Pairings</h4>
+<div class="pair-grid">
+<a class="pair-card" href="veggie-salad.html"><img src="assets/images/veggie-salad.jpg" alt=""><div class="muted">Veggie Salad</div></a>
+<a class="pair-card" href="chocolate-cake.html"><img src="assets/images/chocolate-cake.jpg" alt=""><div class="muted">Chocolate Cake</div></a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

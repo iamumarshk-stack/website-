@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classic Burger — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<section class="hero" style="background-image:url('assets/images/classic-burger.jpg')">
+<div class="hero-content">
+<h1>Classic Burger</h1>
+<p class="muted">Grass-fed angus, house sauce, brioche bun.</p>
+</div>
+</section>
+
+<main class="container" style="margin-top:26px">
+<div class="dish-hero-panel">
+<div class="dish-gallery card">
+<img src="burger hero.avif" alt="Classic Burger">
+</div>
+<div class="dish-info card">
+<h2>Classic Burger</h2>
+<p class="muted">Grass-fed angus patty, melted cheddar, caramelised onions, and house smoked sauce, served with a butter-toasted brioche bun.</p>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+<div>
+<div class="price">₹349</div>
+<div class="muted">Signature • Chef's pick</div>
+</div>
+<div style="text-align:right">
+<label style="display:block;margin-bottom:8px">Quantity</label>
+<div style="display:flex;gap:8px;align-items:center">
+<button class="qty-btn" data-op="dec">−</button>
+<input class="qty-input" value="1">
+<button class="qty-btn" data-op="inc">+</button>
+</div>
+<div style="margin-top:14px">
+<button class="btn btn-primary add-to-cart" data-sku="classic-burger" data-price="349" data-title="Classic Burger" data-img="assets/images/classic-burger.jpg">Add to Cart</button>
+</div>
+</div>
+</div>
+<div style="margin-top:18px">
+<h4>Chef's Notes</h4>
+<p class="muted">Applewood smoked lightly for depth; served medium by default. Request temperature at checkout.</p>
+</div>
+</div>
+</div>
+
+<section style="margin-top:18px" class="card">
+<h4>Recommended Pairings</h4>
+<div class="pair-grid">
+<a class="pair-card" href="french-fries.html"><img src="assets/images/french-fries.jpg" alt=""><div class="muted">Truffle Fries</div></a>
+<a class="pair-card" href="ice-cream-sundae.html"><img src="assets/images/ice-cream-sundae.jpg" alt=""><div class="muted">Sundae</div></a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

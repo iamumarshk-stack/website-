@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veggie Salad — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<section class="hero" style="background-image:url('assets/images/veggie-salad.jpg')">
+<div class="hero-content">
+<h1>Veggie Salad</h1>
+<p class="muted">Fresh organic greens, cherry tomatoes, and light vinaigrette.</p>
+</div>
+</section>
+
+<main class="container" style="margin-top:26px">
+<div class="dish-hero-panel">
+<div class="dish-gallery card">
+<img src="salad hero.avif" alt="Veggie Salad">
+</div>
+<div class="dish-info card">
+<h2>Veggie Salad</h2>
+<p class="muted">Organic greens, cucumbers, cherry tomatoes, carrots, and bell peppers, tossed with balsamic vinaigrette.</p>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+<div>
+<div class="price">₹199</div>
+<div class="muted">Vegetarian • Healthy</div>
+</div>
+<div style="text-align:right">
+<label style="display:block;margin-bottom:8px">Quantity</label>
+<div style="display:flex;gap:8px;align-items:center">
+<button class="qty-btn" data-op="dec">−</button>
+<input class="qty-input" value="1">
+<button class="qty-btn" data-op="inc">+</button>
+</div>
+<div style="margin-top:14px">
+<button class="btn btn-primary add-to-cart" data-sku="veggie-salad" data-price="199" data-title="Veggie Salad" data-img="assets/images/veggie-salad.jpg">Add to Cart</button>
+</div>
+</div>
+</div>
+<div style="margin-top:18apx">
+<h4>Chef's Notes</h4>
+<p class="muted">Fresh, crunchy, and light. Perfect as a starter or a side dish.</p>
+</div>
+</div>
+</div>
+
+<section style="margin-top:18px" class="card">
+<h4>Recommended Pairings</h4>
+<div class="pair-grid">
+<a class="pair-card" href="chicken-tacos.html"><img src="assets/images/chicken-tacos.jpg" alt=""><div class="muted">Chicken Tacos</div></a>
+<a class="pair-card" href="grilled-sandwich.html"><img src="assets/images/grilled-sandwich.jpg" alt=""><div class="muted">Grilled Sandwich</div></a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

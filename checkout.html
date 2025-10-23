@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — DelishBite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { background:#0d0d0d; color:#f0f0f0; font-family:'Inter',sans-serif; }
+.site-header, .site-footer { background:#050507; color:#f0b90b; }
+.container { max-width:1000px; margin:auto; padding:20px; }
+.card { background:#111; border-radius:12px; padding:20px; margin-top:20px; }
+h2,h3 { font-family:'Playfair Display', serif; color:#f0b90b; }
+input, select, textarea { width:100%; padding:10px; margin:6px 0 12px 0; border-radius:6px; border:none; background:#222; color:#f0f0f0; }
+.btn { padding:10px 20px; border:none; border-radius:6px; cursor:pointer; }
+.btn-primary { background:#f0b90b; color:#050507; font-weight:700; transition:0.3s; }
+.btn-primary:hover { background:#e5a800; }
+.order-summary { background:#111; border-radius:12px; padding:16px; margin-top:20px; }
+.order-item { display:flex; justify-content:space-between; margin-bottom:8px; }
+.order-total { font-size:1.2rem; font-weight:700; text-align:right; margin-top:12px; }
+@media(max-width:768px){ .order-item{flex-direction:column;text-align:left;} }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html">DelishBite</a>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart <span id="mini-cart-count" style="background:#f0b90b;color:#050507;padding:2px 6px;border-radius:8px;margin-left:6px;font-weight:700">0</span></a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<h1 style="text-align:center; margin-top:20px;">Checkout</h1>
+
+<div class="card">
+<h2>Billing & Delivery Details</h2>
+<form id="checkout-form">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="John Doe" required>
+<label>Email</label>
+<input type="email" id="email" placeholder="example@mail.com" required>
+<label>Phone</label>
+<input type="tel" id="phone" placeholder="+91 1234567890" required>
+<label>Address</label>
+<textarea id="address" placeholder="123, Street, City, Pincode" required></textarea>
+<label>City</label>
+<input type="text" id="city" placeholder="City" required>
+<label>Pincode</label>
+<input type="text" id="pincode" placeholder="123456" required>
+</form>
+</div>
+
+<div class="card">
+<h2>Payment Options</h2>
+<label>
+<input type="radio" name="payment" value="cod" checked> Cash on Delivery
+</label>
+<label>
+<input type="radio" name="payment" value="card"> Credit/Debit Card
+</label>
+<label>
+<input type="radio" name="payment" value="upi"> UPI
+</label>
+</div>
+
+<div class="order-summary card">
+<h2>Order Summary</h2>
+<div id="order-items">
+<!-- Items added dynamically -->
+</div>
+<div class="order-total">Total: ₹<span id="order-total">0</span></div>
+<button class="btn btn-primary" style="margin-top:16px;" onclick="placeOrder()">Place Order</button>
+</div>
+
+</main>
+
+<footer class="site-footer">
+<div class="container">© 2025 DelishBite</div>
+</footer>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const orderItemsContainer = document.getElementById('order-items');
+const orderTotalEl = document.getElementById('order-total');
+const miniCart = document.getElementById('mini-cart-count');
+
+function renderOrder(){
+    orderItemsContainer.innerHTML = '';
+    let total = 0;
+    if(cart.length===0){
+        orderItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+        orderTotalEl.textContent = '0';
+        return;
+    }
+    cart.forEach(item=>{
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        const div = document.createElement('div');
+        div.className = 'order-item';
+        div.innerHTML = `<div>${item.title} x ${item.quantity}</div><div>₹${subtotal}</div>`;
+        orderItemsContainer.appendChild(div);
+    });
+    orderTotalEl.textContent = total;
+    miniCart.textContent = cart.length;
+}
+
+// Place order simulation
+function placeOrder(){
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const pincode = document.getElementById('pincode').value.trim();
+
+    if(!name || !email || !phone || !address || !city || !pincode){
+        alert('Please fill all the details.');
+        return;
+    }
+
+    alert('Thank you '+name+'! Your order has been placed successfully.');
+    localStorage.removeItem('cart');
+    window.location.href = 'index.html';
+}
+
+// Initial render
+renderOrder();
+</script>
+</body>
+</html>
